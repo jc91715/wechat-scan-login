@@ -37,7 +37,7 @@ return [
      * callback：OAuth授权完成后的回调页地址
      */
     'oauth' => [
-        'scopes'   => ['snsapi_userinfo'],
+        'scopes'   => ['snsapi_base'],
         'callback' => env('WECHAT_REDIRECT'),
     ],
 
