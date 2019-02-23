@@ -16,7 +16,7 @@ class WechatController extends Controller
     public function redirect(Request $request)
     {
         $app = app('wechat');
-        return $app->oauth->scopes(['snsapi_userinfo'])
+        return $app->oauth->scopes(['snsapi_base'])
             ->setRequest($request)
             ->redirect();
     }
