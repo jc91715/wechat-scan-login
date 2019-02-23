@@ -1,0 +1,1 @@
+module.exports = {"api.home.wechat.confirm_login":"api\/home\/wechat\/confirm_login","api.home.wechat.cancel_login":"api\/home\/wechat\/cancel_login","api.home.wechat.login_code_state":"api\/home\/wechat\/login\/{code}\/state","api.home.wechat.api.web_login":"api\/home\/wechat\/login\/api_web_login"};
