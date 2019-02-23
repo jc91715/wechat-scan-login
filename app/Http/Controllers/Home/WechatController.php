@@ -24,12 +24,14 @@ class WechatController extends Controller
     {
         $code = request()->code;
 
-        if(!Cache::has($code)){
-            $filename =$code.'.png';
+
+        if((!$code)||!Cache::has($code)){
             $code = uniqid();
+            $filename =$code.'.png';
             Cache::put($code,'login',10);
             $qrCode = new QrCode("http://wechat-scan-login.jc91715.top/wechat/{$code}/login");
-            $qrCode->writeFile(storage_path($filename));
+            \Log::info(storage_path('app/public/'.$filename));
+            $qrCode->writeFile(storage_path('app/public/'.$filename));
         }
         $filename =$code.'.png';
         $msg ='请扫码登录';
