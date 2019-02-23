@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('wechat/redirect','WechatController@redirect')->name('wechat.redirect');
 Route::get('wechat/callback','WechatController@callback')->name('wechat.callback');
 
-Route::group(['namespace'=>'\Home','middleware'=>'auth'],function(){
+Route::group(['namespace'=>'\Home'],function(){
 
 
     Route::group(['as'=>'api.home.','prefix'=>'api/home'],function(){

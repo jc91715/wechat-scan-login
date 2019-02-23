@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <wechat-web-login></wechat-web-login>
+    <example-component></example-component>
+    <web-login></web-login>
 @endsection

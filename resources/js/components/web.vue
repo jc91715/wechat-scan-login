@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        ddd
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <p>{{msg}}</p>
@@ -23,7 +24,7 @@
         methods:{
             setIntervalRequest(s){
                 setInterval(()=>{
-                    axios.post(Laravel.router('api.home.wechat.web.login',{code:this.code})).then(res=>{
+                    axios.post(Laravel.router('api.home.wechat.api.web_login',{code:this.code})).then(res=>{
                         if(res.data.errorCode){
                             this.msg = res.data.msg
                             this.code = res.data.code
@@ -40,7 +41,7 @@
 
         },
         created(){
-            axios.post(Laravel.router('api.home.wechat.web.login')).then(res=>{
+            axios.post(Laravel.router('api.home.wechat.api.web_login')).then(res=>{
                 if(res.data.errorCode){
                     this.msg = res.data.msg
                     this.code = res.data.code

@@ -1808,6 +1808,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "web",
   data: function data() {
@@ -1822,7 +1823,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       setInterval(function () {
-        axios.post(Laravel.router('api.home.wechat.web.login', {
+        axios.post(Laravel.router('api.home.wechat.api.web_login', {
           code: _this.code
         })).then(function (res) {
           if (res.data.errorCode) {
@@ -1842,7 +1843,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this2 = this;
 
-    axios.post(Laravel.router('api.home.wechat.web.login')).then(function (res) {
+    axios.post(Laravel.router('api.home.wechat.api.web_login')).then(function (res) {
       if (res.data.errorCode) {
         _this2.msg = res.data.msg;
         _this2.code = res.data.code;
@@ -36946,6 +36947,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _vm._v("\n    ddd\n    "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-4 col-md-offset-4" }, [
         _c("p", [_vm._v(_vm._s(_vm.msg))]),
@@ -49087,7 +49089,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
-Vue.component('wechat-web-login', __webpack_require__(/*! ./components/web.vue */ "./resources/js/components/web.vue"));
+Vue.component('web-login', __webpack_require__(/*! ./components/web.vue */ "./resources/js/components/web.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
