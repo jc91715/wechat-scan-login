@@ -11,7 +11,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/bootstrap.css','build') }}" rel="stylesheet">
     <link href="{{ mix('css/app.css','build') }}" rel="stylesheet">
     <script>
         window.Laravel = <?php echo json_encode([
