@@ -1,9 +1,8 @@
 <template>
     <div class="container">
-        ddd
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <p>{{msg}}</p>
+            <div class="col-md-4 col-md-offset-4" style="margin-top: 50px">
+                <p style="text-align: center">{{msg}}</p>
                 <img :src="qrcode_url" alt="">
             </div>
         </div>
