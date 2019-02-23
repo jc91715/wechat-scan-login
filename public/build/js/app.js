@@ -105,9 +105,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this3 = this;
 
-    axios.post(Laravel.router('api.home.wechat.login_code_state'), {
+    axios.post(Laravel.router('api.home.wechat.login_code_state', {
       code: this.code
-    }).then(function (res) {
+    })).then(function (res) {
       if (res.data.errorCode) {
         _this3.state = true;
         _this3.msg = res.data.msg;
@@ -853,7 +853,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _vm.state
-      ? _c("div", [_vm._v("\n        " + _vm._s(_vm.msg) + "\n    ")])
+      ? _c(
+          "div",
+          { staticStyle: { "text-align": "center", "margin-top": "30px" } },
+          [_vm._v("\n        " + _vm._s(_vm.msg) + "\n    ")]
+        )
       : _c("div", [
           _c(
             "h3",
@@ -1080,15 +1084,16 @@ __webpack_require__.r(__webpack_exports__);
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var routes = [{
   path: '/',
-  component: __webpack_require__(/*! ../components/home.vue */ "./resources/js/front/components/home.vue"),
+  component: __webpack_require__(/*! ../components/home.vue */ "./resources/js/front/components/home.vue").default,
   name: 'home',
   children: [{
     path: 'wechat',
-    component: __webpack_require__(/*! ../components/home.vue */ "./resources/js/front/components/home.vue"),
+    component: __webpack_require__(/*! ../components/home.vue */ "./resources/js/front/components/home.vue").default,
     children: [{
       path: ':code/login',
-      component: __webpack_require__(/*! ../login/wechat.vue */ "./resources/js/front/login/wechat.vue"),
-      name: 'wechat.login.index'
+      component: __webpack_require__(/*! ../login/wechat.vue */ "./resources/js/front/login/wechat.vue").default,
+      name: 'wechat.login.index',
+      props: true
     }]
   }]
 }];

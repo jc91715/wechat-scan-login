@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="state">
+        <div v-if="state" style="text-align: center;margin-top: 30px">
             {{msg}}
         </div>
         <div v-else>
@@ -36,7 +36,7 @@
             }
         },
         created(){
-            axios.post(Laravel.router('api.home.wechat.login_code_state'),{code:this.code}).then(res=>{
+            axios.post(Laravel.router('api.home.wechat.login_code_state',{code:this.code})).then(res=>{
                 if(res.data.errorCode){
                     this.state = true
                     this.msg = res.data.msg

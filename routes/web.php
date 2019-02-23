@@ -17,19 +17,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//\Auth::login(\App\User::find(1));
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('wechat/redirect','WechatController@redirect')->name('wechat.redirect');
 Route::get('wechat/callback','WechatController@callback')->name('wechat.callback');
 
-Route::group(['namespace'=>'\Home'],function(){
-
+Route::group(['middleware'=>'auth'],function(){
 
     Route::group(['as'=>'api.home.','prefix'=>'api/home'],function(){
-        Route::post('wechat/confirm_login','WechatController@confirm_login')->name('wechat.confirm_login');
-        Route::post('wechat/cancel_login','WechatController@cancel_login')->name('wechat.cancel_login');
-        Route::post('wechat/login/{code}/state','WechatController@login_state')->name('wechat.login_code_state');
+        Route::post('wechat/confirm_login','Home\WechatController@confirm_login')->name('wechat.confirm_login');//确认登录
+        Route::post('wechat/cancel_login','Home\WechatController@cancel_login')->name('wechat.cancel_login');//取消登陆
+        Route::post('wechat/login/{code}/state','Home\WechatController@login_code_state')->name('wechat.login_code_state');//已扫描状态
     });
 });
 

@@ -36,7 +36,8 @@ class WechatController extends Controller
         $filename =$code.'.png';
         $msg ='请扫码登录';
         $errorCode=1;
-        if($login_state=Cache::has($code.'login_state')){
+        if(Cache::has($code.'login_state')){
+            $login_state = Cache::get($code.'login_state');
             switch ($login_state){
                 case 'scan':
                     $errorCode =1;

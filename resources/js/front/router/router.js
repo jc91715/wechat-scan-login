@@ -5,12 +5,12 @@ Vue.use(VueRouter);
 
 const routes=[
     {
-        path: '/', component: require('../components/home.vue') ,name: 'home',
+        path: '/', component: require('../components/home.vue').default ,name: 'home',
         children: [
             {
-                path: 'wechat',component: require('../components/home.vue'),
+                path: 'wechat',component: require('../components/home.vue').default,
                 children: [
-                    { path: ':code/login',component: require('../login/wechat.vue') ,name: 'wechat.login.index' },
+                    { path: ':code/login',component: require('../login/wechat.vue').default ,name: 'wechat.login.index' ,props:true},
                 ]
             }
         ]
