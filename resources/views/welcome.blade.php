@@ -81,7 +81,11 @@
 
             <div class="content">
                 <div style="text-align: center">
-                    <a href="{{route('wechat.web.login')}}"> 微信扫码登录</a>
+                    <a href="https://github.com/jc91715/wechat-scan-login">github</a><br>
+                    <img src="/images/c43e884352f59a4d23574aebaeb97f3.png" alt=""><br>
+                    <a href="{{route('wechat.web.login')}}" style="font-size: 30px"> 测试微信扫码登录</a>
+
+
                 </div>
 
             </div>
